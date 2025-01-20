@@ -17,6 +17,11 @@ const App = () => {
     { id: 3, name: "Sneakers", price: 60, image: SneakersImage },
     { id: 4, name: "Hat", price: 15, image: HatImage },
     { id: 5, name: "Socks", price: 5, image: SocksImage },
+    { id: 6, name: "T-Shirt", price: 20, image: TshirtImage },
+    { id: 7, name: "Jeans", price: 40, image: JeansImage },
+    { id: 8, name: "Sneakers", price: 60, image: SneakersImage },
+    { id: 9, name: "Hat", price: 15, image: HatImage },
+    { id: 10, name: "Socks", price: 5, image: SocksImage },
   ]);
 
   const [cart, setCart] = useState([]);
@@ -28,7 +33,9 @@ const App = () => {
       const existingItem = prevCart.find((item) => item.id === product.id);
       if (existingItem) {
         return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         );
       }
       return [...prevCart, { ...product, quantity: 1 }];
@@ -72,7 +79,10 @@ const App = () => {
         />
       </div>
 
+      <h3>Products</h3>
+
       {/* Product List */}
+
       <ProductList products={filteredProducts} onAddToCart={handleAddToCart} />
 
       {/* Cart */}

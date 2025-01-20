@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem";
 const ProductList = ({ products, onAddToCart }) => {
   return (
     <div className="product-list">
-      <h2>Products</h2>
+      {/* <h2>Products</h2> */}
       {products.map((product) => (
         <ProductItem
           key={product.id}
